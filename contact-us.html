@@ -11,38 +11,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- OpenMap -->
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-		<link rel="stylesheet" href="assets/css/openmap.css" />
-		<!-- Make sure you put this AFTER Leaflet's CSS -->
- 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> 
+	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+ <style>
+  #map { 
+  widh: 50px;
+  height: 600px; }
+ </style>
+
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
+					<h1><a href="index.html">Smart-LaSDPC</a> Project</h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#" class="icon solid fa-angle-down">Layouts</a>
-								<ul>
-									<li><a href="generic.html">Generic</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="elements.html">Elements</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="#" class="button">Sign Up</a></li>
+							<li><a href="about-project.html">About the project</a> </li>
+							<li><a href="researchers.html">Researchers</a> </li>
+							<li><a href="publications.html">Publications</a></li>
+							<li><a href="contact-us.html">Contacts us</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -54,8 +44,13 @@
 						<p>Please write us a message to learn more about our project at the following email <a href="mailto:herminiopaucar@usp.br">herminiopaucar@usp.br</a>.</p>
 					</header>
 					<div class="box">						
-						<h3>Project location</h3>
-						<div id="open-map"></div>
+						<h3>Smart LaSDPC location</h3>
+						<p>UNIVERSIDADE DE SÃO PAULO<br>
+						INSTITUTO DE CIÊNCIAS MATEMÁTICAS E DE COMPUTAÇÃO<br>
+						Avenida Trabalhador São-carlense, 400 - Centro<br>
+						CEP: 13566-590 - São Carlos - SP
+						</p>
+						<div id="map"></div>
 					</div>
 				</section>
 
@@ -84,6 +79,16 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<!-- Make sure you put this AFTER Leaflet's CSS -->
+ 			<script> 
+				var map = L.map('map').setView([-22.00741,-47.89533], 14);		 
+				L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		    		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+		    		maxZoom: 20
+				}).addTo(map);
 
+				L.control.scale().addTo(map);
+				L.marker([-22.00741,-47.89533], {draggable: true}).addTo(map);
+ 			</script>
 	</body>
 </html>
