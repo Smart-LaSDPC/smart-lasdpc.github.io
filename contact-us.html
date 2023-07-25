@@ -40,15 +40,15 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>Contact Us</h2>
-						<p>Please write us a message to learn more about our project at the following email <a href="mailto:herminiopaucar@usp.br">herminiopaucar@usp.br</a>.</p>
+						<h2>Contact Us</h2>						
 					</header>
 					<div class="box">						
 						<h3>Smart LaSDPC location</h3>
 						<p>UNIVERSIDADE DE SÃO PAULO<br>
 						INSTITUTO DE CIÊNCIAS MATEMÁTICAS E DE COMPUTAÇÃO<br>
 						Avenida Trabalhador São-carlense, 400 - Centro<br>
-						CEP: 13566-590 - São Carlos - SP
+						CEP: 13566-590 - São Carlos - SP<br>
+						Please write us a message to learn more about our project at the following email <a href="mailto:herminiopaucar@usp.br">herminiopaucar@usp.br</a>.
 						</p>
 						<div id="map"></div>
 					</div>
@@ -65,7 +65,7 @@
 						<!--li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li-->
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Smart-LaSDPC. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>				
 			</footer>
 
@@ -81,14 +81,16 @@
 			<script src="assets/js/main.js"></script>
 			<!-- Make sure you put this AFTER Leaflet's CSS -->
  			<script> 
-				var map = L.map('map').setView([-22.00741,-47.89533], 14);		 
+				var map = L.map('map').setView([-22.00741,-47.89533], 15);		 
 				L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		    		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-		    		maxZoom: 20
+		    		
 				}).addTo(map);
 
 				L.control.scale().addTo(map);
-				L.marker([-22.00741,-47.89533], {draggable: true}).addTo(map);
+				L.marker([-22.00741,-47.89533], {draggable: true})
+					.addTo(map)
+					.bindPopup('<b>ICMC, Block 1, rooms 1006 and 1008</b>.').openPopup();
  			</script>
 	</body>
 </html>
